@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  background: $gray-f2f;
+}
+
+body {
+  font-size: 1.6rem;
+  margin: 0;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $body-color;
+  overflow-x: hidden;
+
+  &::before {
+    content: "";
+    background: $purple;
+    position: absolute;
+    display: block;
+    height: 12vw;
+    min-height: 20rem;
+    width: 150%;
+    z-index: -1;
+    transform-origin: 0 100%;
+    transform: rotate(-8deg);
+  }
+}
+
+.sr-hidden {
+  width: 1px;
+  height: 1rem;
+  left: -999999px;
+  position: absolute;
+}

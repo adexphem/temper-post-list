@@ -1,28 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <post-list></post-list>
+    <action-list></action-list>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import PostList from "./components/Posts/List";
+import ActionList from "./components/Actions/List";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    PostList,
+    ActionList
   }
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: grid;
+  grid-template: repeat(1, auto) / repeat(2, minmax(30rem, 50%));
+  grid-gap: 8.5rem;
+  width: 80%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 4rem;
+  align-items: start;
 }
 </style>
