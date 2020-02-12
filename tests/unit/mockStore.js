@@ -21,5 +21,17 @@ export const mockStore = new Vuex.Store({
   },
   actions: {
     fetchPosts: jest.fn()
-  }
+  },
+  mutations: {
+    setPosts(state, posts) {
+      state.posts = posts;
+    },
+    addAction(state, action) {
+      state.lastActionIndex = -1;
+      state.actions.push(action);
+    },
+    setLastActionIndex(state, index) {
+      state.lastActionIndex = index;
+    }
+  },
 });

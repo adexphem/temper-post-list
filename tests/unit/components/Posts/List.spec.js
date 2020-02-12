@@ -1,23 +1,18 @@
-import { shallowMount } from "@vue/test-utils";
+import { mount } from "@vue/test-utils";
 import PostList from "@/components/Posts/List";
 import { mockStore } from "../../mockStore";
 
 describe("Posts/List.vue", () => {
-  let store
-
-  beforeEach(() => {
-    store = mockStore.state.posts
-  })
-
-  const wrapper = shallowMount(PostList, { store: mockStore });
-
-  console.log('-->- ', mockStore.state.posts)
+  const wrapper = mount(PostList, { store: mockStore });
 
   it("renders a Posts section with text 'Sortable Post List'", () => {
-
     expect(wrapper.text().trim().includes("Sortable Post List"))
       .toBe(true) 
   });
 
+  it("renders a Posts with 5 Lits Items", () => {
+    expect(wrapper.findAll('li').length)
+      .toEqual(5)
+  });
 
 });
